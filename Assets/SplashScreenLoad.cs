@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class SplashScreenLoad : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public string video;
+    public VideoPlayer player;
     void Start()
     {
         StartCoroutine(Load());
+        string path = System.IO.Path.Combine(Application.streamingAssetsPath, video);
+        player.url = path;
+        player.Play();
     }
 
     // Update is called once per frame
