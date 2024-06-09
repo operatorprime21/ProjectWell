@@ -950,7 +950,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 6
+  m_fontStyle: 4
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -4375,7 +4375,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 6
+  m_fontStyle: 4
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -12032,7 +12032,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 6
+  m_fontStyle: 4
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -12376,7 +12376,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 6
+  m_fontStyle: 4
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -13841,9 +13841,10 @@ MonoBehaviour:
   m_text: "The Rod will is the tool you need to retrieve items from Wells.\n\nUse
     Mouse to navigate the rod horizontally. Left click to drop the Bait lower, Right
     click to reel the Bait in. \n\nStart reeling near an item automatically hooks
-    it, and the item needs to be retrieved above 2m from the Well surface for successful
-    retrieval\n\nNOTE: Due to the abnormal gravitational properties of Wells, stopping
-    reeling while an item is hooked will result in the lost of said item."
+    it (indicated by the sound of a bell), stop reeling the item when it is above
+    5m from the surface of the Well to retrieve it\n\nNOTE: Due to the abnormal gravitational
+    properties of Wells, stopping reeling while an item is hooked will result in
+    the lost of said item if it had not resurfaced high enough."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13876,7 +13877,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 6
+  m_fontStyle: 4
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -15852,12 +15853,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The camera will be your primary method of navigating the Well.\n \nKey
-    A and D rotates the view.\nKey W raises the view. S lowers the view.\n\nWells
-    absorb light at a consistent rate. Each camera has been equipped with a high-powered
-    Flash that can momentarily illuminate the Well (Key F). The Flash function requires
-    recharging after each use\n\nNOTE: You can access this manual when inspecting
-    the manual closer using key E"
+  m_text: "The camera will be your primary method of navigating the Well through
+    a portable Monitor.\n \nKey A and D rotates the view.\nKey W raises the view.
+    S lowers the view.\n\nWells absorb light at a consistent rate. Each camera has
+    been equipped with a high-powered Flash that can momentarily illuminate the Well
+    (Key F). The Flash function requires recharging after each use\n\nNOTE: You can
+    access this manual when inspecting the manual closer using key E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15890,7 +15891,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 6
+  m_fontStyle: 4
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -21708,6 +21709,7 @@ GameObject:
   - component: {fileID: 1749574154}
   - component: {fileID: 1749574153}
   - component: {fileID: 1749574152}
+  - component: {fileID: 1749574155}
   m_Layer: 0
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -21805,6 +21807,41 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!328 &1749574155
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749574150}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 4f904784cb41187469c36d76bf6fc2ae, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1001 &1753133730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26641,7 +26678,7 @@ MonoBehaviour:
   shop: {fileID: 2060351252}
   tree: {fileID: 1617186378}
   currency: 0
-  quota: 150
+  quota: 9999
   txtGoal: {fileID: 2020228236}
   tier1Fish:
   - {fileID: 7358604222456772071, guid: 7a152d4276ada5942aa5bae4d8fd9727, type: 3}
